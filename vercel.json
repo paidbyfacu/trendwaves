@@ -1,7 +1,8 @@
 {
   "redirects": [
-    { "source": "/ramma-campa%C3%B1a", "destination": "/ramma-accion-single" },
-    { "source": "/ramma-campaña", "destination": "/ramma-accion-single" },
-    { "source": "/ramma-campana", "destination": "/ramma-accion-single" }
+    { "source": "/ramma-accion-single", "destination": "/ramma/accion" },
+    { "source": "/ramma-campa%C3%B1a", "destination": "/ramma/accion" },
+    { "source": "/ramma-campaña", "destination": "/ramma/accion" },
+    { "source": "/ramma-campana", "destination": "/ramma/accion" }
   ]
 }
