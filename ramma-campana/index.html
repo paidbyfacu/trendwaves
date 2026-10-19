@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Propuesta de campaña con influencers para Ta Te Ti, el nuevo single de Ramma.">
+<meta name="robots" content="noindex">
+<title>Ramma · Ta Te Ti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: Trendwaves house style. Dark ground, square corners, hairline borders, uppercase mono headings with a closing period, one neon-green accent. Numbered sections, videos in square-edged phone frames. */
+:root{
+  --bg:#111111;
+  --card:#181818;
+  --raise:#1c1c1c;
+  --line:#282828;
+  --fg:#fafafa;
+  --muted:#8a8a8a;
+  --green:#00ff66;
+  --on-green:#111111;
+  --mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:15px;line-height:1.7;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.95;text-wrap:balance}
+h1{font-size:clamp(2.5rem,7.5vw,5.4rem)}
+h2{font-size:clamp(1.7rem,4.4vw,2.8rem)}
+.g{color:var(--green)}
+.tag{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--green)}
+.lbl{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.copy{color:var(--muted);max-width:60ch}
+.copy b,.copy strong{color:var(--fg);font-weight:700}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em;color:var(--fg);text-decoration:none}
+.sign a{color:var(--muted)}
+.logo i{font-style:normal;width:32px;height:32px;display:grid;place-items:center;background:var(--green);color:var(--on-green);font-weight:800;font-size:.9rem}
+.nav .lbl{text-align:right}
+
+/* hero */
+.hero{display:grid;gap:40px;padding-block:64px 64px;align-items:center;border-bottom:1px solid var(--line)}
+@media (min-width:820px){.hero{grid-template-columns:minmax(0,1.4fr) minmax(0,.9fr)}}
+.hero .kicker{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.hero .kicker i{width:26px;height:26px;background:var(--green);color:var(--on-green);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:.8rem}
+.hero .copy{margin-top:26px;font-size:1rem}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:36px;border:1px solid var(--line)}
+.facts div{padding:16px;display:grid;gap:4px;min-width:0;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{font-size:1.15rem;font-weight:700;font-variant-numeric:tabular-nums;text-transform:uppercase}
+.portrait{margin:0;border:1px solid var(--line);background:var(--card);padding:10px}
+.portrait img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover}
+.portrait figcaption{display:flex;justify-content:space-between;gap:10px;padding:12px 4px 2px}
+
+/* sections */
+section{padding-block:64px;border-bottom:1px solid var(--line);display:grid;gap:32px}
+.head{display:grid;gap:14px}
+.num{font-size:.8rem;color:var(--green);letter-spacing:.12em}
+.media{display:grid;gap:36px;align-items:start}
+@media (min-width:760px){.media{grid-template-columns:280px minmax(0,1fr)}}
+.phone{width:min(280px,100%);border:1px solid var(--line);background:var(--card);padding:8px}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
+.phone .lbl{display:block;padding:10px 4px 2px}
+.txt{display:grid;gap:22px;min-width:0}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;border:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:86px minmax(0,1fr);border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps .t{padding:14px;border-right:1px solid var(--line);color:var(--green);font-size:.78rem;font-variant-numeric:tabular-nums}
+.steps div{padding:14px;color:var(--muted)}
+.steps b{color:var(--fg);text-transform:uppercase;font-size:.85rem;letter-spacing:.04em;margin-right:6px}
+
+/* cards */
+.grid{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.card{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:10px;align-content:start;min-width:0;background:var(--bg)}
+.card .n{color:var(--green);font-size:.78rem}
+.card h3{font-size:1.05rem;letter-spacing:-.01em;line-height:1.15}
+.card p{color:var(--muted);font-size:.9rem}
+.card.key{background:var(--card)}
+.card.key h3{color:var(--green)}
+
+.note{border:1px solid var(--line);border-left:3px solid var(--green);background:var(--card);padding:18px 20px;display:grid;gap:6px;max-width:64ch}
+.note p{color:var(--muted)}
+
+/* timeline */
+.line{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border:1px solid var(--line)}
+.stop{padding:24px;border-right:1px solid var(--line);display:grid;gap:8px;min-width:0}
+.stop:last-child{border-right:0}
+.stop .d{font-size:1.6rem;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+.stop p{color:var(--muted);font-size:.9rem}
+.stop.on{background:var(--green);color:var(--on-green)}
+.stop.on .lbl,.stop.on p{color:var(--on-green)}
+@media (max-width:720px){.stop{border-right:0;border-bottom:1px solid var(--line)}.stop:last-child{border-bottom:0}}
+
+/* close */
+.close{padding-block:72px 88px;display:grid;gap:22px}
+.close .copy{font-size:1rem}
+.sign{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;border-top:1px solid var(--line);padding-top:22px;margin-top:8px}
+.sign b{text-transform:uppercase;letter-spacing:.04em}
+
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="/"><i>T.</i>Trendwaves.</a>
+    <span class="lbl">Propuesta de campaña · Oct 2026</span>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="hero">
+    <div>
+      <div class="kicker"><i>T.</i><span class="tag">Nueva campaña con influencers.</span></div>
+      <h1>Ta Te Ti.<br><span class="g">El nuevo single de Ramma.</span></h1>
+      <p class="copy">Ramma es un artista urbano de la nueva escena argentina. Para el lanzamiento de su nueva canción estamos creando un trend en TikTok y buscamos influencers que quieran representarla. <b>Nos gustaría que seas parte.</b></p>
+      <div class="facts">
+        <div><span class="lbl">Lanzamiento</span><b>22 Oct</b></div>
+        <div><span class="lbl">Plataforma</span><b>TikTok</b></div>
+        <div><span class="lbl">Duración</span><b>1 Mes</b></div>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="/media/ramma/ramma.jpg" alt="Retrato de Ramma a contraluz, con anteojos y campera de cuero negra">
+      <figcaption><span class="lbl">Ramma.</span><span class="lbl">Artista urbano</span></figcaption>
+    </figure>
+  </header>
+
+  <section id="cancion">
+    <div class="head"><span class="num">01 /</span><h2>La canción.</h2></div>
+    <div class="media">
+      <div class="phone">
+        <video id="v-cancion" src="/media/ramma/cancion.mp4" poster="/media/ramma/cancion.jpg" controls playsinline preload="metadata"></video>
+        <span class="lbl">Ta Te Ti · Ramma</span>
+      </div>
+      <div class="txt">
+        <p class="copy"><b>Ta Te Ti</b> sale el <b>jueves 22 de octubre</b>. Es el tema que va de fondo en todos los videos de la campaña.</p>
+        <p class="copy">Dale play para escucharlo antes de grabar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trend">
+    <div class="head"><span class="num">02 /</span><h2>El trend.</h2></div>
+    <div class="media">
+      <div class="phone">
+        <video id="v-trend" src="/media/ramma/trend.mp4" poster="/media/ramma/trend.jpg" controls playsinline preload="metadata"></video>
+        <span class="lbl">Video de referencia</span>
+      </div>
+      <div class="txt">
+        <p class="copy">El trend consiste en bailar la canción junto a <b>tu abuelo o tu abuela</b>. La coreografía es simple, pensada para que cualquier persona mayor la pueda seguir. Lo que buscamos es que se vea natural y con buena energía entre los dos.</p>
+        <p class="copy">El video es una referencia para que te des una idea del trend.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="con-quien">
+    <div class="head"><span class="num">03 /</span><h2>Con quién grabar.</h2></div>
+    <p class="copy">Lo ideal es hacerlo con <b>tu abuelo o tu abuela</b>. Si no es posible, también podés grabarlo con <b>una persona mayor de tu entorno</b> que haga ese papel: una tía abuela, un vecino o el abuelo de un amigo.</p>
+  </section>
+
+  <section id="condiciones">
+    <div class="head"><span class="num">04 /</span><h2>Condiciones.</h2></div>
+    <div class="grid">
+      <div class="card key"><span class="n">01</span><h3>Sonido oficial.</h3><p>Cada video se publica con el sonido oficial de la canción en TikTok, disponible una vez que el tema esté lanzado.</p></div>
+      <div class="card"><span class="n">02</span><h3>Publicación.</h3><p>Los videos se suben a partir del 22 de octubre. Con cada creador acordamos una fecha concreta dentro de la campaña.</p></div>
+      <div class="card"><span class="n">03</span><h3>Descripción.</h3><p>Opcional. Si querés, podés mencionar a Ramma o sumar algo relacionado a la canción en la descripción del video.</p></div>
+      <div class="card"><span class="n">04</span><h3>Formato.</h3><p>Video vertical, en plano abierto, donde se vean los dos de cuerpo entero.</p></div>
+      <div class="card key"><span class="n">05</span><h3>Compensación.</h3><p>Cada perfil recibe un pago definido según sus seguidores y visualizaciones, acordado antes de grabar.</p></div>
+    </div>
+  </section>
+
+  <section id="fechas">
+    <div class="head"><span class="num">05 /</span><h2>Fechas y pagos.</h2></div>
+    <div class="line">
+      <div class="stop on"><span class="lbl">Inicio</span><span class="d">22 Oct</span><p>Sale la canción y empiezan a publicarse los videos.</p></div>
+      <div class="stop"><span class="lbl">Cierre</span><span class="d">22 Nov</span><p>Finaliza la campaña, un mes después del lanzamiento.</p></div>
+      <div class="stop"><span class="lbl">Pagos</span><span class="d g">Desde el 22 Nov</span><p>Los pagos se abonan al finalizar la campaña: a partir de la fecha de cierre, el 22 de noviembre, en los días hábiles siguientes, a todos los influencers que participaron.</p></div>
+    </div>
+  </section>
+
+  <footer class="close">
+    <span class="tag">Próximo paso.</span>
+    <h2>Nos gustaría<br><span class="g">que seas parte.</span></h2>
+    <p class="copy">Si te interesa sumarte, respondenos por mensaje y te pasamos los detalles para tu perfil.</p>
+    <div class="sign">
+      <a class="logo" href="/"><i>T.</i>Trendwaves.</a>
+      <span><b>Facundo</b> <span class="lbl">· El puente publicitario</span></span>
+      <a class="lbl" href="/">trendwaves.net</a>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>
