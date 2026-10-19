@@ -1,6 +1,7 @@
 {
-  "rewrites": [
-    { "source": "/ramma-campa%C3%B1a", "destination": "/ramma-campana/index.html" },
-    { "source": "/ramma-campaña", "destination": "/ramma-campana/index.html" }
+  "redirects": [
+    { "source": "/ramma-campa%C3%B1a", "destination": "/ramma-accion-single" },
+    { "source": "/ramma-campaña", "destination": "/ramma-accion-single" },
+    { "source": "/ramma-campana", "destination": "/ramma-accion-single" }
   ]
 }
