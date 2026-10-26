@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Reglas de contenido para creadores de la campaña de Ta Te Ti, el nuevo single de Ramma.">
+<meta name="robots" content="noindex">
+<title>Ta Te Ti · Reglas</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: Trendwaves house style (same as the campaign page). Dark ground, square corners, hairline borders, uppercase mono headings with a closing period, one neon-green accent. Sections numbered because they are the order a creator follows. */
+:root{
+  --bg:#111111;
+  --card:#181818;
+  --line:#282828;
+  --fg:#fafafa;
+  --muted:#8a8a8a;
+  --green:#00ff66;
+  --on-green:#111111;
+  --red:#ff5a4e;
+  --mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:15px;line-height:1.7;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.95;text-wrap:balance}
+h1{font-size:clamp(2.4rem,7vw,5rem)}
+h2{font-size:clamp(1.6rem,4.2vw,2.6rem)}
+.g{color:var(--green)}
+.tag{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--green)}
+.lbl{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.copy{color:var(--muted);max-width:62ch}
+.copy b{color:var(--fg);font-weight:700}
+
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em;color:var(--fg);text-decoration:none}
+.logo i{font-style:normal;width:32px;height:32px;display:grid;place-items:center;background:var(--green);color:var(--on-green);font-weight:800;font-size:.9rem}
+.nav .lbl{text-align:right}
+
+.hero{padding-block:60px;border-bottom:1px solid var(--line);display:grid;gap:26px}
+.hero .copy{font-size:1rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);max-width:760px}
+.facts div{padding:16px;display:grid;gap:4px;min-width:0;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{font-size:1.05rem;font-weight:700;text-transform:uppercase}
+@media (max-width:560px){.facts div{border-right:0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}}
+
+section{padding-block:60px;border-bottom:1px solid var(--line);display:grid;gap:30px}
+.head{display:grid;gap:14px}
+.num{font-size:.8rem;color:var(--green);letter-spacing:.12em}
+.media{display:grid;gap:36px;align-items:start}
+@media (min-width:760px){.media{grid-template-columns:280px minmax(0,1fr)}}
+.phone{width:min(280px,100%);border:1px solid var(--line);background:var(--card);padding:8px}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
+.phone .lbl{display:block;padding:10px 4px 2px}
+.txt{display:grid;gap:20px;min-width:0}
+
+.btn{display:inline-flex;align-items:center;gap:10px;justify-self:start;background:var(--green);color:var(--on-green);text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:14px 18px;font-size:.85rem}
+.btn:hover{filter:brightness(.92)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.card{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:10px;align-content:start;min-width:0}
+.card .n{color:var(--green);font-size:.78rem}
+.card h3{font-size:1.05rem;letter-spacing:-.01em;line-height:1.15}
+.card p{color:var(--muted);font-size:.9rem}
+.card.key{background:var(--card)}
+.card.key h3{color:var(--green)}
+
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.quote{padding:22px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:8px;min-width:0}
+.quote q{font-weight:700;font-size:1.02rem;line-height:1.35;quotes:"“" "”"}
+
+.dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));border:1px solid var(--line)}
+.dd>div{padding:24px;display:grid;gap:14px;align-content:start;border-right:1px solid var(--line);min-width:0}
+.dd>div:last-child{border-right:0}
+@media (max-width:620px){.dd>div{border-right:0;border-bottom:1px solid var(--line)}.dd>div:last-child{border-bottom:0}}
+.dd h3{font-size:1rem;display:flex;align-items:center;gap:10px}
+.dd h3 i{font-style:normal;width:24px;height:24px;display:grid;place-items:center;font-size:.8rem;font-weight:800}
+.ok h3 i{background:var(--green);color:var(--on-green)}
+.no h3 i{background:var(--red);color:var(--on-green)}
+.no h3{color:var(--red)}
+.dd ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.dd li{color:var(--muted);font-size:.9rem;padding-left:18px;position:relative}
+.dd li::before{content:"—";position:absolute;left:0;color:var(--line)}
+.dd li b{color:var(--fg)}
+
+.steps{list-style:none;margin:0;padding:0;border:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:64px minmax(0,1fr);border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps .t{padding:16px 14px;border-right:1px solid var(--line);color:var(--green);font-size:.85rem;font-weight:700;font-variant-numeric:tabular-nums}
+.steps div{padding:16px;color:var(--muted);display:grid;gap:4px;min-width:0}
+.steps b{color:var(--fg);text-transform:uppercase;font-size:.85rem;letter-spacing:.04em}
+
+.check{list-style:none;margin:0;padding:0;border:1px solid var(--line);display:grid}
+.check li{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;border-bottom:1px solid var(--line);color:var(--muted)}
+.check li:last-child{border-bottom:0}
+.check li::before{content:"";flex:0 0 auto;width:16px;height:16px;margin-top:5px;border:1.5px solid var(--green)}
+.check b{color:var(--fg)}
+
+.note{border:1px solid var(--line);border-left:3px solid var(--green);background:var(--card);padding:18px 20px;display:grid;gap:6px;max-width:66ch}
+.note p{color:var(--muted)}
+
+.close{padding-block:64px 84px;display:grid;gap:20px}
+.sign{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;border-top:1px solid var(--line);padding-top:22px;margin-top:6px}
+.sign b{text-transform:uppercase;letter-spacing:.04em}
+.tt{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.ttw{display:grid;min-width:0}
+.cp{font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--line);border-top:0;padding:10px;cursor:pointer;overflow-wrap:anywhere}
+.cp:hover{color:var(--green)}
+.ttc{display:grid;gap:0;border:1px solid var(--line);background:var(--card);padding:8px;text-decoration:none;color:var(--fg);min-width:0}
+.ttc:hover{border-color:var(--green)}
+.scr{position:relative;display:grid;place-items:center;aspect-ratio:9/16;max-width:100%;background:repeating-linear-gradient(135deg,#151515 0 14px,#1a1a1a 14px 28px)}
+.scr{overflow:hidden}
+.scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pl{position:relative;width:58px;height:58px;border:2px solid var(--green);display:grid;place-items:center;background:rgba(17,17,17,.6)}
+.pl::after{content:"";border-left:16px solid var(--green);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.ttc:hover .pl{background:var(--green)}
+.ttc:hover .pl::after{border-left-color:var(--on-green)}
+.badge{position:absolute;top:10px;left:10px;background:var(--green);color:var(--on-green);font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px}
+.meta{display:grid;gap:2px;padding:12px 4px 4px}
+.meta b{text-transform:uppercase;letter-spacing:.02em}
+.go{color:var(--green);font-size:.78rem;margin-top:6px}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="/"><i>T.</i>Trendwaves.</a>
+    <span class="lbl">Ramma · Ta Te Ti</span>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="hero">
+    <span class="tag">Guía para creadores.</span>
+    <h1>Reglas de<br><span class="g">contenido.</span></h1>
+    <p class="copy">Todo lo que tu video tiene que cumplir para la campaña de <b>Ta Te Ti</b>, el nuevo tema de Ramma, y cómo subirlo paso a paso. Leelo antes de grabar.</p>
+    <div class="facts">
+      <div><span class="lbl">Plataforma</span><b>TikTok</b></div>
+      <div><span class="lbl">Entrega</span><b>1 video</b></div>
+      <div><span class="lbl">Con quién</span><b>Persona mayor</b></div>
+      <div><span class="lbl">Hasta</span><b>22 Nov</b></div>
+    </div>
+  </header>
+
+  <section id="referencia">
+    <div class="head"><span class="num">01 /</span><h2>La referencia.</h2></div>
+    <div class="media">
+      <div class="phone">
+        <video src="/media/ramma/reglas-trend.mp4" poster="/media/ramma/reglas-trend.jpg" controls playsinline preload="metadata"></video>
+        <span class="lbl">Video de referencia</span>
+      </div>
+      <div class="txt">
+        <p class="copy">Este es el trend. Tu video tiene que seguir <b>el mismo baile</b> y usar <b>el mismo fragmento de la canción</b> que suena acá. Miralo un par de veces antes de grabar.</p>
+        <p class="copy">Para escuchar el tema completo y ubicar el fragmento:</p>
+        <a class="btn" href="https://www.youtube.com/watch?v=wj1tove--Jk" target="_blank" rel="noopener">Escuchar Ta Te Ti en YouTube ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="publicados">
+    <div class="head"><span class="num">02 /</span><h2>TikToks de otros creadores.</h2></div>
+    <p class="copy">Videos de la campaña que ya están publicados. Miralos para ver cómo lo resolvieron: el baile, el fragmento de la canción y el copy.</p>
+    <div class="tt">
+      <div class="ttw"><a class="ttc" href="https://www.tiktok.com/@555ramma/video/7700738103794797842" target="_blank" rel="noopener">
+        <span class="scr"><img src="/media/ramma/tt-ramma.jpg" alt="Ramma bailando con una señora mayor frente a una verdulería" loading="lazy"><span class="pl" aria-hidden="true"></span><span class="badge">Artista</span></span>
+        <span class="meta"><b>Ramma</b><span class="lbl">@555ramma</span><span class="go">Ver en TikTok ↗</span></span>
+      </a>
+      <button type="button" class="cp" data-u="https://www.tiktok.com/@555ramma/video/7700738103794797842">Copiar link</button></div>
+      <div class="ttw"><a class="ttc" href="https://www.tiktok.com/@lucataffarel/video/7701075242478832916" target="_blank" rel="noopener">
+        <span class="scr"><img src="/media/ramma/tt-taffita.jpg" alt="Taffita bailando con una señora mayor en un jardín con montañas de fondo" loading="lazy"><span class="pl" aria-hidden="true"></span></span>
+        <span class="meta"><b>Taffita</b><span class="lbl">@lucataffarel</span><span class="go">Ver en TikTok ↗</span></span>
+      </a>
+      <button type="button" class="cp" data-u="https://www.tiktok.com/@lucataffarel/video/7701075242478832916">Copiar link</button></div>
+      <div class="ttw"><a class="ttc" href="https://www.tiktok.com/@florgonzalez002/video/7700425539449916693" target="_blank" rel="noopener">
+        <span class="scr"><img src="/media/ramma/tt-flor.jpg" alt="Flor Gonzalez con su abuela y el texto: yo no bailo con mis amigas pero con mi abuela sí" loading="lazy"><span class="pl" aria-hidden="true"></span></span>
+        <span class="meta"><b>Flor Gonzalez</b><span class="lbl">@florgonzalez002</span><span class="go">Ver en TikTok ↗</span></span>
+      </a>
+      <button type="button" class="cp" data-u="https://www.tiktok.com/@florgonzalez002/video/7700425539449916693">Copiar link</button></div>
+    </div>
+  </section>
+
+  <section id="reglas">
+    <div class="head"><span class="num">03 /</span><h2>Lo necesario.</h2></div>
+    <div class="grid">
+      <div class="card key"><span class="n">01</span><h3>Con una persona mayor.</h3><p>Grabás el baile con tu abuelo o tu abuela. Si no es posible, con una persona mayor de tu entorno que haga ese papel.</p></div>
+      <div class="card key"><span class="n">02</span><h3>Mismo fragmento.</h3><p>El momento de la canción tiene que ser exactamente el mismo que en el video de referencia.</p></div>
+      <div class="card"><span class="n">03</span><h3>Sonido oficial.</h3><p>Se publica con el sonido oficial de Ta Te Ti de Ramma en TikTok, no con un audio subido aparte.</p></div>
+      <div class="card"><span class="n">04</span><h3>Copy con el video.</h3><p>El video va acompañado de un texto que tenga que ver con lo que se ve. Abajo tenés ideas.</p></div>
+      <div class="card"><span class="n">05</span><h3>Formato.</h3><p>Vertical, en plano abierto, donde se vean los dos de cuerpo entero bailando.</p></div>
+    </div>
+  </section>
+
+  <section id="copy">
+    <div class="head"><span class="num">04 /</span><h2>El copy.</h2></div>
+    <p class="copy">El texto del video (en pantalla o en la descripción) tiene que estar <b>relacionado con el video</b>: algo gracioso, cómico o que haga referencia a lo que pasa con tu abuelo o tu abuela. Mencionar a Ramma es opcional. Algunos ejemplos:</p>
+    <div class="quotes">
+      <div class="quote"><q>Yo no bailo con mis amigas, pero con mi abuela sí</q></div>
+      <div class="quote"><q>Ella se maquilló para este video</q></div>
+      <div class="quote"><q>Yo no bailo, pero con mi abuelo sí</q></div>
+      <div class="quote"><q>Mi abuela ensayó más que yo</q></div>
+      <div class="quote"><q>Le enseñé el baile a mi abuelo y ahora me corrige</q></div>
+      <div class="quote"><q>Mi abuela tiene más ritmo que yo</q></div>
+    </div>
+    <p class="copy">Son ideas: podés escribir el tuyo, siempre que tenga que ver con el video.</p>
+  </section>
+
+  <section id="pov">
+    <div class="head"><span class="num">05 /</span><h2>En caso de usar POV <span class="g">(textos en pantalla).</span></h2></div>
+    <div class="dd">
+      <div class="ok">
+        <h3><i>✓</i>Sí</h3>
+        <ul>
+          <li><b>Lo ideal:</b> solo el trend de baile, sin POV.</li>
+          <li>Un POV únicamente si tiene que ver con el baile y tu abuelo o abuela. Por ejemplo: <b>“POV: no bailo con mis amigas, pero con mi abuela sí”</b>.</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3><i>✕</i>No</h3>
+        <ul>
+          <li>POVs que no tienen nada que ver con el video o con el trend.</li>
+          <li>Videos sin ningún copy, o con un texto que no se relaciona con lo que se ve.</li>
+          <li>Un fragmento de la canción distinto al de la referencia.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="subir">
+    <div class="head"><span class="num">06 /</span><h2>Cómo subirlo.</h2></div>
+    <ol class="steps">
+      <li><span class="t">01</span><div><b>Mirá la referencia.</b><span>Fijate el baile y qué parte de la canción suena.</span></div></li>
+      <li><span class="t">02</span><div><b>Grabá el video.</b><span>Con tu abuelo o abuela, en vertical y de cuerpo entero. Podés grabar sin audio o con la canción de fondo para guiarse.</span></div></li>
+      <li><span class="t">03</span><div><b>Agregá el sonido oficial.</b><span>En TikTok tocá “Sonidos”, buscá “Ta Te Ti Ramma” y elegí el sonido oficial.</span></div></li>
+      <li><span class="t">04</span><div><b>Ajustá el fragmento.</b><span>Con la opción de recortar el sonido, dejalo en el mismo momento de la canción que el video de referencia.</span></div></li>
+      <li><span class="t">05</span><div><b>Escribí el copy.</b><span>Un texto en pantalla o en la descripción que tenga que ver con el video.</span></div></li>
+      <li><span class="t">06</span><div><b>Publicá y avisanos.</b><span>Mandanos el link del video por mensaje para registrarlo en la campaña.</span></div></li>
+    </ol>
+  </section>
+
+  <section id="checklist">
+    <div class="head"><span class="num">07 /</span><h2>Antes de publicar.</h2></div>
+    <ul class="check">
+      <li><span>Bailo con <b>mi abuelo, mi abuela o una persona mayor</b>.</span></li>
+      <li><span>El baile sigue <b>la referencia</b>.</span></li>
+      <li><span>Usé el <b>sonido oficial</b> de Ta Te Ti en TikTok.</span></li>
+      <li><span>El sonido está en <b>el mismo fragmento</b> que la referencia.</span></li>
+      <li><span>El video tiene un <b>copy relacionado</b> con lo que se ve.</span></li>
+      <li><span>Si usé un POV, <b>tiene que ver con el baile</b> y la persona mayor.</span></li>
+      <li><span>Es <b>vertical</b> y se nos ve a los dos.</span></li>
+    </ul>
+    <div class="note">
+      <span class="tag">Fechas.</span>
+      <p>Los videos se pueden subir hasta el <b style="color:var(--fg)">22 de noviembre</b>. Coordiná con nosotros tu fecha de publicación.</p>
+    </div>
+  </section>
+
+  <footer class="close">
+    <span class="tag">¿Dudas?</span>
+    <h2>Escribinos antes<br><span class="g">de publicar.</span></h2>
+    <p class="copy">Si no estás seguro de algo (el copy, el fragmento o con quién grabar), mandanos un mensaje y lo vemos juntos.</p>
+    <div class="sign">
+      <span class="logo"><i>T.</i>Trendwaves.</span>
+      <span><b>Facundo</b> <span class="lbl">· El puente publicitario</span></span>
+      <span class="lbl">trendwaves.net</span>
+    </div>
+  </footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function(b){b.addEventListener('click',function(){var u=b.getAttribute('data-u');var done=function(){b.textContent='Link copiado';setTimeout(function(){b.textContent='Copiar link'},1800)};try{navigator.clipboard.writeText(u).then(done,function(){b.textContent=u})}catch(e){b.textContent=u}})});
+</script>
+
+</body>
+</html>
