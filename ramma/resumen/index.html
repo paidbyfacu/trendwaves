@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Resumen de la campaña de influencers de Ta Te Ti, de Ramma, en TikTok: vistas, creadores, cómo se movió el trend e inversión.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#111111">
+<title>Ta Te Ti · Resumen</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700;800&display=swap">
+<style>
+/* Trendwaves house style: dark ground, square corners, hairline borders, uppercase mono headings with a closing period, one neon-green accent. Here as a full-screen deck: one slide at a time, everything animates in when its slide opens. */
+:root{
+  --bg:#111111;
+  --card:#181818;
+  --raise:#1c1c1c;
+  --line:#282828;
+  --fg:#fafafa;
+  --muted:#8a8a8a;
+  --green:#00ff66;
+  --green-dim:rgba(0,255,102,.14);
+  --on-green:#111111;
+  --mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --top:60px;
+  --bot:68px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:15px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased;overflow:hidden;overscroll-behavior:none}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.95;text-wrap:balance}
+h1{font-size:clamp(2.6rem,8vw,6.2rem)}
+h2{font-size:clamp(1.8rem,4.6vw,3.4rem)}
+.g{color:var(--green)}
+.tag{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--green)}
+.lbl{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.copy{color:var(--muted);max-width:58ch;font-size:1rem}
+.copy b{color:var(--fg);font-weight:700}
+.num{font-variant-numeric:tabular-nums}
+a{color:inherit}
+
+/* chrome */
+.top{position:fixed;inset:0 0 auto;z-index:20;height:calc(var(--top) + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid var(--line);background:rgba(17,17,17,.88);backdrop-filter:blur(10px)}
+.top .row{height:var(--top);display:flex;align-items:center;justify-content:space-between;gap:16px;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em;color:var(--fg);text-decoration:none}
+.logo i{font-style:normal;width:32px;height:32px;display:grid;place-items:center;background:var(--green);color:var(--on-green);font-weight:800;font-size:.9rem}
+.top .lbl{text-align:right}
+.ctrl{position:fixed;inset:auto 0 0;z-index:20;height:calc(var(--bot) + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);border-top:1px solid var(--line);background:rgba(17,17,17,.9);backdrop-filter:blur(10px)}
+.ctrl .bar{position:absolute;inset:-1px 0 auto;height:2px;background:transparent}
+.ctrl .bar i{display:block;height:100%;width:100%;background:var(--green);transform-origin:left;transform:scaleX(var(--p,0));transition:transform .6s var(--ease)}
+.ctrl .row{height:var(--bot);display:flex;align-items:center;gap:12px;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.ctrl button{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--fg);font:inherit;font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;min-height:44px;min-width:44px;padding:0 14px;cursor:pointer}
+.ctrl button:hover{border-color:var(--green)}
+.ctrl button.main{background:var(--green);border-color:var(--green);color:var(--on-green)}
+.ctrl button:disabled{opacity:.35;cursor:default;border-color:var(--line)}
+.ctrl .where{flex:1;min-width:0;display:flex;align-items:center;gap:14px;overflow:hidden}
+.ctrl .count{font-variant-numeric:tabular-nums;color:var(--green);font-size:.8rem;letter-spacing:.1em;white-space:nowrap}
+.ctrl .name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dots{display:flex;gap:6px}
+.dots button{min-width:0;min-height:0;width:10px;height:10px;padding:0;border:1px solid #444;background:transparent}
+.dots button[aria-current="true"]{background:var(--green);border-color:var(--green)}
+@media (max-width:760px){.dots{display:none}.ctrl .name{display:none}}
+
+/* deck */
+.deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;padding:calc(var(--top) + env(safe-area-inset-top,0px)) 0 calc(var(--bot) + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;transform:translateX(5%);transition:opacity .55s var(--ease),transform .7s var(--ease),visibility 0s .7s}
+.slide.past{transform:translateX(-5%)}
+.slide.on{opacity:1;visibility:visible;transform:none;transition:opacity .55s var(--ease),transform .7s var(--ease),visibility 0s}
+.in{height:100%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.pad{min-height:100%;max-width:1200px;margin:0 auto;padding:28px max(20px,env(safe-area-inset-left,0px)) 28px max(20px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;justify-content:center;gap:24px}
+.head{display:grid;gap:14px}
+.k{font-size:.8rem;color:var(--green);letter-spacing:.12em}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .9s var(--ease);transition-delay:0s}
+.on .rv{opacity:1;transform:none;transition-delay:calc(var(--d,0) * 90ms + 120ms)}
+
+/* cover */
+.cover .pad{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){.cover .pad{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+.kicker{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.kicker i{width:26px;height:26px;background:var(--green);color:var(--on-green);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:.8rem}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:34px;border:1px solid var(--line)}
+.facts div{padding:14px 16px;display:grid;gap:4px;min-width:0;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{font-size:1.05rem;font-weight:700;font-variant-numeric:tabular-nums;text-transform:uppercase}
+.reel{height:min(62vh,560px);display:grid;grid-template-columns:repeat(3,1fr);gap:10px;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
+.reel .col{display:flex;flex-direction:column;gap:10px;animation:up 38s linear infinite}
+.reel .col:nth-child(2){animation-name:down;animation-duration:44s}
+.reel .col:nth-child(3){animation-duration:33s}
+.reel img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border:1px solid var(--line);background:var(--card)}
+@keyframes up{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes down{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+@media (max-width:899px){.reel{height:300px;grid-template-columns:repeat(4,1fr)}.reel .col:nth-child(4){display:flex}}
+@media (min-width:900px){.reel .col:nth-child(4){display:none}}
+.ticker{position:absolute;left:0;right:0;bottom:calc(var(--bot) + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);overflow:hidden;white-space:nowrap;background:var(--bg)}
+.ticker div{display:inline-block;padding:10px 0;animation:tick 40s linear infinite}
+.ticker span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-right:28px}
+.ticker span.g{color:var(--green)}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.cover .in{padding-bottom:40px}
+
+/* big number */
+.big{font-size:clamp(4rem,17vw,13rem);font-weight:800;letter-spacing:-.06em;line-height:.85;color:var(--green);font-variant-numeric:tabular-nums;white-space:nowrap}
+.big small{font-size:.22em;letter-spacing:.02em;color:var(--fg);margin-left:.2em;vertical-align:.25em;text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.stats div{padding:18px 18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:6px;min-width:0;background:var(--bg)}
+.stats b{font-size:clamp(1.4rem,3vw,2.1rem);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.stats div.key{background:var(--green);color:var(--on-green)}
+.stats div.key .lbl{color:var(--on-green)}
+
+/* versus */
+.vs{display:grid;gap:12px}
+.vrow{display:grid;gap:8px}
+.vrow .top2{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.vrow .top2 b{font-size:clamp(1.4rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.track{height:clamp(28px,4.6vh,48px);border:1px solid var(--line);background:var(--card);position:relative;overflow:hidden}
+.track i{position:absolute;inset:0 auto 0 0;width:calc(var(--w) * 100%);background:var(--fg);transform-origin:left;transform:scaleX(0);transition:transform 1.6s var(--ease)}
+.track.gr i{background:var(--green)}
+.track.st i.a{background:var(--fg)}
+.track.st i.b{left:calc(var(--a) * 100%);background:var(--green);transition-delay:.5s}
+.on .track i{transform:scaleX(1);transition-delay:calc(var(--d,0) * 120ms + 300ms)}
+.on .track.st i.b{transition-delay:1.1s}
+.callout{border:1px solid var(--line);border-left:3px solid var(--green);background:var(--card);padding:18px 20px;display:grid;gap:6px;max-width:64ch}
+.callout p{color:var(--muted)}
+.callout b{color:var(--fg)}
+
+/* ranking */
+.rank{list-style:none;margin:0;padding:0;border:1px solid var(--line)}
+.rank li{border-bottom:1px solid var(--line)}
+.rank li:last-child{border-bottom:0}
+.rank a{display:grid;grid-template-columns:34px 32px minmax(0,190px) minmax(0,1fr) 88px;align-items:center;gap:12px;padding:4px 14px 4px 10px;text-decoration:none;color:var(--fg)}
+.rank a:hover{background:var(--card)}
+.rank a:hover .nm{color:var(--green)}
+.rank .p{color:var(--muted);font-size:.78rem;font-variant-numeric:tabular-nums;text-align:right}
+.rank img{width:32px;height:32px;object-fit:cover;object-position:center 30%;display:block;border:1px solid var(--line)}
+.rank .who{min-width:0;display:grid;line-height:1.25}
+.rank .nm{font-weight:700;font-size:.86rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase;letter-spacing:.02em}
+.rank .hd{font-size:.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank .b{height:14px;position:relative}
+.rank .b i{position:absolute;inset:0 auto 0 0;width:max(3px,calc(var(--w) * 100%));background:#3a3a3a;transform-origin:left;transform:scaleX(0);transition:transform 1.3s var(--ease)}
+.rank li.top3 .b i{background:var(--green)}
+.on .rank .b i{transform:scaleX(1);transition-delay:calc(var(--d,0) * 70ms + 250ms)}
+.rank .v{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:.9rem}
+@media (max-width:700px){.rank a{grid-template-columns:22px 34px minmax(0,1fr) 70px;gap:10px;padding:8px 10px}.rank img{width:34px;height:34px}.rank .b{grid-column:3/5;grid-row:2;height:6px;margin-top:-2px}.rank .p{grid-column:1;grid-row:1}.rank img{grid-column:2;grid-row:1}.rank .who{grid-column:3;grid-row:1}.rank .v{grid-column:4;grid-row:1}}
+
+/* phones */
+.phones{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;align-items:flex-end}
+.phones .phone{width:calc(var(--ph) * 9 / 16 + 18px)}
+.slide{--ph:clamp(240px,calc(100dvh - var(--top) - var(--bot) - 360px),560px)}
+.phone{border:1px solid var(--line);background:var(--card);padding:8px;display:grid;gap:10px;position:relative;min-width:0}
+.phone .scr{position:relative;aspect-ratio:9/16;background:#000;overflow:hidden;cursor:pointer}
+.phone video,.phone .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.phone .snd{position:absolute;left:8px;bottom:8px;z-index:2;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(17,17,17,.82);color:var(--fg);padding:6px 8px;border:1px solid var(--line);pointer-events:none}
+.phone .scr.loud .snd{background:var(--green);color:var(--on-green);border-color:var(--green)}
+.phone .rk{position:absolute;right:8px;top:8px;z-index:2;background:var(--green);color:var(--on-green);font-weight:800;font-size:.8rem;width:30px;height:30px;display:grid;place-items:center}
+.phone .cap{display:grid;gap:2px;padding:0 4px 4px}
+.phone .cap b{font-size:1.3rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.1}
+.phone .cap .nm{font-weight:700;text-transform:uppercase;font-size:.82rem;letter-spacing:.03em}
+.float .phone{animation:bob 6s ease-in-out infinite}
+.float .phone:nth-child(2){animation-delay:-2s}
+.float .phone:nth-child(3){animation-delay:-4s}
+.float .phone:nth-child(4){animation-delay:-1s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.podium .phone:nth-child(1){order:2}
+.podium .phone:nth-child(1) .scr{margin-top:0}
+.podium .phone:nth-child(2){order:1}
+.podium .phone:nth-child(3){order:3}
+.podium .phone:nth-child(2) .scr{transform:scale(.94);transform-origin:bottom}
+.podium .phone:nth-child(3) .scr{transform:scale(.88);transform-origin:bottom}
+@media (max-width:700px){.podium .phone{order:0 !important;margin-top:0 !important}.phones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.phones .phone{width:auto}.phone .cap b{font-size:1.05rem}}
+
+/* over median */
+.mult{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.mult > div{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:14px;align-content:start;min-width:0}
+.mult .x{font-size:clamp(2.8rem,7vw,4.8rem);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--green);font-variant-numeric:tabular-nums}
+.mult .who{display:flex;align-items:center;gap:12px}
+.mult .who img{width:44px;height:44px;object-fit:cover;object-position:center 30%;border:1px solid var(--line)}
+.mult .who b{display:block;text-transform:uppercase;font-size:.9rem}
+.pair{display:grid;gap:8px}
+.pair .r{display:grid;grid-template-columns:72px minmax(0,1fr) 64px;gap:10px;align-items:center;font-size:.72rem}
+.pair .r span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--fg)}
+.pair .t{height:10px;position:relative;background:var(--card)}
+.pair .t i{position:absolute;inset:0 auto 0 0;width:calc(var(--w) * 100%);background:#4a4a4a;transform-origin:left;transform:scaleX(0);transition:transform 1.4s var(--ease)}
+.pair .r.n .t i{background:var(--green)}
+.on .pair .t i{transform:scaleX(1);transition-delay:calc(var(--d,0) * 150ms + 400ms)}
+
+/* wall */
+.wall{display:grid;grid-template-columns:repeat(7,min(calc((100% - 48px) / 7),calc((100dvh - var(--top) - var(--bot) - 300px) / 2 * 9 / 16)));justify-content:center;gap:8px}
+.tile{position:relative;aspect-ratio:9/16;background:#000;border:1px solid var(--line);overflow:hidden;cursor:pointer}
+.tile video,.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile .ov{position:absolute;inset:auto 0 0;padding:26px 8px 8px;background:linear-gradient(transparent,rgba(0,0,0,.85));display:grid;gap:0;z-index:2}
+.tile .ov b{font-size:.95rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tile .ov span{font-size:.6rem;letter-spacing:.06em;color:#cfcfcf;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile.art{outline:2px solid var(--green);outline-offset:-2px}
+.tile.loud{outline:2px solid var(--green);outline-offset:-2px}
+.wall .tile{opacity:0;transform:scale(.92);transition:opacity .6s var(--ease),transform .8s var(--ease)}
+.on .wall .tile{opacity:1;transform:none;transition-delay:calc(var(--d,0) * 60ms + 200ms)}
+@media (max-width:1000px){.wall{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media (max-height:620px) and (min-width:1001px){.wall{grid-template-columns:repeat(7,minmax(0,1fr))}}
+@media (max-width:640px){.wall{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* timeline */
+.chart{border:1px solid var(--line);background:var(--card);padding:14px 10px 6px;position:relative}
+.chart svg{display:block;width:100%;height:auto;max-height:max(220px,calc(100dvh - var(--top) - var(--bot) - 500px));overflow:visible}
+.chart .ax{stroke:var(--line);stroke-width:1}
+.chart text{font-family:var(--mono);font-size:12px;fill:var(--muted);letter-spacing:.06em}
+.chart .bub{transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .9s var(--ease);cursor:pointer}
+.on .chart .bub{transform:scale(1);transition-delay:calc(var(--d,0) * 110ms + 500ms)}
+.chart .bub circle{transition:stroke-width .2s}
+.chart .bub:hover circle,.chart .bub.hl circle{stroke:var(--fg);stroke-width:3}
+.chart .camp{fill:var(--green);fill-opacity:.85}
+.chart .ind{fill:transparent;stroke:var(--fg);stroke-width:1.5}
+.chart .art{fill:var(--fg);fill-opacity:.9}
+.chart .lab{font-size:12px;fill:var(--fg);font-weight:700;pointer-events:none;opacity:0;transition:opacity .5s}
+.on .chart .lab{opacity:1;transition-delay:2.4s}
+.chart .sweep{stroke:var(--green);stroke-width:1;stroke-dasharray:3 4;opacity:0}
+.on .chart .sweep{animation:sweep 2.2s var(--ease) .4s forwards}
+@keyframes sweep{0%{opacity:1;transform:translateX(0)}90%{opacity:1}100%{opacity:0;transform:translateX(var(--sx))}}
+.tip{position:absolute;pointer-events:none;background:var(--bg);border:1px solid var(--green);padding:8px 10px;font-size:.75rem;line-height:1.35;white-space:nowrap;transform:translate(-50%,calc(-100% - 12px));opacity:0;transition:opacity .15s;z-index:3}
+.tip.show{opacity:1}
+.tip b{display:block;font-size:.95rem}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.cards{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.cards > div{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:8px;align-content:start;min-width:0}
+.cards b{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;color:var(--green)}
+.cards p{color:var(--muted);font-size:.86rem}
+
+/* money */
+.money{display:grid;gap:30px}
+@media (min-width:900px){.money{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center}}
+.money .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ring{position:relative;width:min(300px,70vw);aspect-ratio:1;margin-inline:auto}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:10}
+.ring .bg{stroke:var(--line)}
+.ring .fg{stroke:var(--green);stroke-dasharray:var(--c);stroke-dashoffset:var(--c);transition:stroke-dashoffset 2s var(--ease)}
+.on .ring .fg{stroke-dashoffset:0;transition-delay:.4s}
+.ring .mid{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:4px}
+.ring .mid b{font-size:clamp(2.2rem,6vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+
+/* close */
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 16px;border:1px solid var(--line);background:var(--card);color:var(--fg);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.btn:hover{border-color:var(--green)}
+.btn.main{background:var(--green);border-color:var(--green);color:var(--on-green)}
+.sign{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;border-top:1px solid var(--line);padding-top:22px}
+.sign b{text-transform:uppercase;letter-spacing:.04em}
+.mosaic{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;opacity:.9}
+.mosaic img:nth-child(n+10){display:none}
+.mosaic img{width:100%;aspect-ratio:9/16;object-fit:cover;border:1px solid var(--line);filter:grayscale(1) brightness(.75);transition:filter .6s}
+.mosaic img:hover{filter:none}
+.on .mosaic img{animation:flash 9s steps(1) infinite;animation-delay:calc(var(--d,0) * 1s)}
+@keyframes flash{0%{filter:none}8%{filter:grayscale(1) brightness(.75)}}
+@media (max-width:640px){.mosaic{grid-template-columns:repeat(6,minmax(0,1fr))}.mosaic img:nth-child(n+10){display:block}.mosaic img:nth-child(n+13){display:none}}
+
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition-duration:.01s !important;transition-delay:0s !important}
+}
+
+/* print: one slide per page, everything at its final state */
+@media print{
+  @page{size:1600px 900px;margin:0}
+  body{overflow:visible}
+  .top,.ctrl,.hint,.ticker{display:none}
+  .deck{position:static}
+  .slide{position:relative;inset:auto;opacity:1 !important;visibility:visible !important;transform:none !important;height:900px;page-break-after:always;break-after:page;padding:0}
+  .in{overflow:visible}
+  .rv,.wall .tile{opacity:1 !important;transform:none !important}
+  .track i,.rank .b i,.pair .t i,.chart .bub{transform:none !important}
+  .chart .lab{opacity:1 !important}
+  .ring .fg{stroke-dashoffset:0 !important}
+  *{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="row">
+    <a class="logo" href="/"><i>T.</i>Trendwaves.</a>
+    <span class="lbl">Resumen de campaña · Nov 2026</span>
+  </div>
+</header>
+
+<main class="deck" id="deck">
+
+  <!-- 01 portada -->
+  <section class="slide cover" data-name="Portada">
+    <div class="in"><div class="pad">
+      <div>
+        <div class="kicker rv"><i>T.</i><span class="tag">Ramma × Trendwaves.</span></div>
+        <h1 class="rv" style="--d:1">Ta Te Ti.<br><span class="g">Resumen de campaña.</span></h1>
+        <p class="copy rv" style="--d:2" >Un mes de trend en TikTok para acompañar el nuevo single de Ramma: <b>creadores bailando la canción con sus abuelos</b>. Acá están los números, los videos y cómo se movió.</p>
+        <div class="facts rv" style="--d:3">
+          <div><span class="lbl">Período</span><b>22/10 a 22/11</b></div>
+          <div><span class="lbl">Plataforma</span><b>TikTok</b></div>
+          <div><span class="lbl">Creadores</span><b>13</b></div>
+        </div>
+      </div>
+      <div class="reel rv" style="--d:2" id="reel" aria-hidden="true"></div>
+    </div></div>
+    <div class="ticker" aria-hidden="true"><div id="ticker"></div></div>
+  </section>
+
+  <!-- 02 resultado -->
+  <section class="slide" data-name="El resultado">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">01 /</span><h2>El resultado.</h2></div>
+      <div class="rv" style="--d:1">
+        <div class="big"><span data-count="129928">129.928</span><small>vistas</small></div>
+        <p class="copy" style="margin-top:18px">Entre los <b>14 videos</b> que publicaron los <b>13 creadores</b> de la campaña, contadas al 21 de noviembre.</p>
+      </div>
+      <div class="stats rv" style="--d:2">
+        <div><span class="lbl">Me gusta</span><b data-count="10980">10.980</b></div>
+        <div><span class="lbl">Compartidos</span><b data-count="225">225</b></div>
+        <div><span class="lbl">Guardados</span><b data-count="358">358</b></div>
+        <div><span class="lbl">Comentarios</span><b data-count="154">154</b></div>
+        <div class="key"><span class="lbl">Interacción</span><b data-count="8.7" data-dec="1" data-suf="%">8,7%</b></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 03 vs ramma -->
+  <section class="slide" data-name="Más que el video de Ramma">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">02 /</span><h2>La campaña superó<br><span class="g">al video del artista.</span></h2></div>
+      <div class="vs">
+        <div class="vrow rv" style="--d:1">
+          <div class="top2"><span class="lbl">Video de Ramma con el trend · @555ramma</span><b data-count="78600">78.600</b></div>
+          <div class="track" style="--w:.377"><i style="--d:0"></i></div>
+        </div>
+        <div class="vrow rv" style="--d:2">
+          <div class="top2"><span class="lbl">Videos de los 13 creadores</span><b class="g" data-count="129928">129.928</b></div>
+          <div class="track gr" style="--w:.623"><i style="--d:2"></i></div>
+        </div>
+        <div class="vrow rv" style="--d:3">
+          <div class="top2"><span class="lbl">Todo junto</span><b data-count="208528">208.528</b></div>
+          <div class="track st" style="--a:.377"><i class="a" style="--w:.377"></i><i class="b" style="--w:.623"></i></div>
+        </div>
+      </div>
+      <div class="callout rv" style="--d:4">
+        <span class="tag">En pocas palabras.</span>
+        <p>Los creadores sumaron <b><span data-count="1.65" data-dec="2">1,65</span> veces</b> las vistas del video del propio Ramma. Entre los dos, el trend pasó las <b>200 mil vistas</b>.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 04 ranking -->
+  <section class="slide" data-name="Ranking de creadores">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">03 /</span><h2>Ranking de creadores.</h2><p class="copy">Vistas de cada video al 21 de noviembre. Toca una fila para abrir el video en TikTok.</p></div>
+      <ol class="rank rv" style="--d:1" id="rank"></ol>
+    </div></div>
+  </section>
+
+  <!-- 05 podio -->
+  <section class="slide" data-name="El podio">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">04 /</span><h2>El podio.</h2><p class="copy">Los tres videos que más se vieron. Toca un video para escucharlo.</p></div>
+      <div class="phones podium float rv" style="--d:1" id="podium"></div>
+    </div></div>
+  </section>
+
+  <!-- 06 sobre su promedio -->
+  <section class="slide" data-name="Por encima de lo habitual">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">05 /</span><h2>Rindieron más<br><span class="g">que de costumbre.</span></h2><p class="copy">Comparamos cada video con la <b>mediana de vistas</b> que ese creador suele tener en su perfil.</p></div>
+      <div class="mult rv" style="--d:1" id="mult"></div>
+    </div></div>
+  </section>
+
+  <!-- 07 todos los videos -->
+  <section class="slide" data-name="Todos los videos">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">06 /</span><h2>Todos los videos.</h2><p class="copy">Los 13 creadores y el video de Ramma, borde verde. Toca uno para escucharlo.</p></div>
+      <div class="wall" id="wall"></div>
+    </div></div>
+  </section>
+
+  <!-- 08 cómo se movió -->
+  <section class="slide" data-name="Cómo se movió">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">07 /</span><h2>Cómo se movió el trend.</h2><p class="copy">Cada círculo es un video: cuándo salió y cuántas vistas tiene. Pasa el cursor o toca uno para ver el detalle.</p></div>
+      <div class="chart rv" style="--d:1" id="chart"><div class="tip" id="tip"></div></div>
+      <div class="legend rv" style="--d:2">
+        <span class="lbl"><i style="background:var(--green)"></i>Creadores de la campaña</span>
+        <span class="lbl"><i style="background:var(--fg)"></i>Ramma</span>
+        <span class="lbl"><i style="border:1.5px solid var(--fg)"></i>Creadores independientes</span>
+      </div>
+      <div class="cards rv" style="--d:3">
+        <div><b data-count="109">109</b><p>videos publicados con el <span style="color:var(--fg)">sonido oficial de TA TE TI</span> en TikTok.</p></div>
+        <div><b>+<span data-count="120" >120</span> mil</b><p>vistas en videos de <span style="color:var(--fg)">27 cuentas de fans</span>: letras, edits, fondos de pantalla y covers de la canción.</p></div>
+        <div><b data-count="3">3</b><p>creadores bailaron con el audio que subió <span style="color:var(--fg)">otro creador de la campaña</span>: el trend se contagió entre ellos.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 09 independientes -->
+  <section class="slide" data-name="Creadores independientes">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">08 /</span><h2>Inspiramos a creadores<br><span class="g">independientes.</span></h2><p class="copy">Personas que <b>no formaban parte de la campaña</b> se sumaron solas al trend: con su abuela, su nona, su mamá y sus amigas. Toca un video para escucharlo.</p></div>
+      <div class="phones float rv" style="--d:1;--ph:clamp(220px,calc(100dvh - var(--top) - var(--bot) - 520px),520px)" id="indies"></div>
+      <div class="stats rv" style="--d:2">
+        <div><span class="lbl">Videos espontáneos</span><b data-count="5">5</b></div>
+        <div><span class="lbl">Vistas sin pago</span><b data-count="18249">18.249</b></div>
+        <div class="key"><span class="lbl">Costo</span><b>USD 0</b></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 10 inversión -->
+  <section class="slide" data-name="Inversión">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">09 /</span><h2>La inversión.</h2></div>
+      <div class="money">
+        <div class="stats rv" style="--d:1">
+          <div class="key"><span class="lbl">Inversión total</span><b>USD <span data-count="1500">1.500</span></b></div>
+          <div><span class="lbl">Creadores</span><b data-count="13">13</b></div>
+          <div><span class="lbl">Seguidores sumados</span><b><span data-count="2.4" data-dec="1">2,4</span> M</b></div>
+          <div><span class="lbl">Videos publicados</span><b data-count="14">14</b></div>
+        </div>
+        <div class="ring rv" style="--d:2">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52" style="--c:326.7"/></svg>
+          <div class="mid"><span class="lbl">Cada mil vistas</span><b>USD <span data-count="11.5" data-dec="1">11,5</span></b><span class="lbl">sobre 129.928 vistas</span></div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 11 cierre -->
+  <section class="slide" data-name="Cierre">
+    <div class="in"><div class="pad">
+      <div class="head rv"><span class="k">10 /</span><h1 style="font-size:clamp(2.4rem,6.4vw,5rem)">Gracias.<br><span class="g">Ta Te Ti sigue sonando.</span></h1></div>
+      <p class="copy rv" style="--d:1">Más de <b>200 mil vistas</b> entre la campaña y el video de Ramma, <b>13 creadores</b> en dos países y un trend que se siguió moviendo solo.</p>
+      <div class="mosaic rv" style="--d:2" id="mosaic" aria-hidden="true"></div>
+      <div class="links rv" style="--d:3">
+        <a class="btn main" href="https://www.tiktok.com/music/TA-TE-TI-7694002879645108225" target="_blank" rel="noopener">Ver el sonido en TikTok ↗</a>
+        <a class="btn" href="/ramma/accion">Ver la propuesta de campaña ↗</a>
+      </div>
+      <div class="sign rv" style="--d:4"><b>Facundo</b><span class="lbl">El puente publicitario · Trendwaves</span></div>
+    </div></div>
+  </section>
+
+</main>
+
+
+<nav class="ctrl" aria-label="Navegación del resumen">
+  <div class="bar"><i id="prog"></i></div>
+  <div class="row">
+    <button id="prev" aria-label="Diapositiva anterior">←</button>
+    <div class="where"><span class="count" id="count">01 / 11</span><span class="lbl name" id="name">Portada</span></div>
+    <div class="dots" id="dots"></div>
+    <button id="next" class="main" aria-label="Diapositiva siguiente">Siguiente →</button>
+  </div>
+</nav>
+
+<script>
+const M = "/media/ramma/resumen/";
+const CREW = [
+  {n:"Joaco Neco", h:"jjoaconeco", f:"jjoaconeco", v:57200, l:3434, s:111, d:"29/10", m:51000, id:"7702213841857350919"},
+  {n:"viuxyta", h:"viuxyta", f:"viuxyta", v:25800, l:1190, s:3, d:"01/11", m:3370, id:"7703300645696048385", x:"2 videos"},
+  {n:"Melina Gonzalez", h:"aamelgonzalez", f:"aamelgonzalez", v:20200, l:3392, s:36, d:"28/10", m:32800, id:"7701840418090143028"},
+  {n:"Taffita", h:"lucataffarel", f:"lucataffarel", v:7168, l:1340, s:19, d:"26/10", m:3790, id:"7701075242478832916"},
+  {n:"Flor Gonzalez", h:"florgonzalez002", f:"florgonzalez002", v:5898, l:381, s:11, d:"24/10", id:"7700425539449916693"},
+  {n:"Malota", h:"maleotta", f:"maleotta", v:4427, l:170, s:1, d:"02/11", id:"7703629343695605013"},
+  {n:"Ayala", h:"ayalagzz", f:"ayalagzz", v:3414, l:558, s:16, d:"18/11", id:"7709610116529622292"},
+  {n:"solegdysz", h:"__sool", f:"sool", v:2277, l:256, s:16, d:"03/11", id:"7704137320886193429"},
+  {n:"Lautaro Villalba", h:"soylauve", f:"soylauve", v:1269, l:58, s:4, d:"04/11", id:"7704510889013218567"},
+  {n:"achudelgado", h:"achudelgado", f:"achudelgado", v:1083, l:92, s:1, d:"04/11", id:"7704362104530259221"},
+  {n:"Karla Villela", h:"karla.villelaa", f:"karla-villelaa", v:564, l:54, s:3, d:"06/11", id:"7705163550137847041"},
+  {n:"Agos Torchelli", h:"agostorchelli", f:"agostorchelli", v:434, l:43, s:2, d:"27/10", id:"7701511286374354184"},
+  {n:"Facundo Nicolas", h:"facunicolas", f:"facunicolas", v:194, l:12, s:2, d:"31/10", id:"7702930408765279509"}
+];
+const RAMMA = {n:"Ramma", h:"555ramma", f:"555ramma", v:78600, l:19100, d:"25/10", id:"7700738103794797842"};
+const INDIES = [
+  {n:"agoslcni", h:"agoslcni", f:"agoslcni", v:6660, d:"27/10", c:"Con su abuela", id:"7701375784484736277"},
+  {n:"555cat1ta", h:"555cat1ta", f:"555cat1ta", v:3187, d:"26/10", c:"Con su mamá", id:"7701153260278779156"},
+  {n:"pieruccioni._", h:"pieruccioni._", f:"pieruccioni", v:3010, d:"29/10", c:"Con su nonita", id:"7702226595418836232"},
+  {n:"_cataabarrera_", h:"_cataabarrera_", f:"cataabarrera", v:335, d:"10/11", c:"Con su abuela", id:"7706678365037645077"}
+];
+const AGOS_AMIGA = {n:"agoslcni", h:"agoslcni", v:5057, d:"27/10", c:"Con una amiga"};
+
+const fmt = (n, dec=0) => n.toLocaleString("es-AR", {minimumFractionDigits:dec, maximumFractionDigits:dec});
+const url = o => `https://www.tiktok.com/@${o.h}/video/${o.id}`;
+const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* portada: columnas de portadas que suben y bajan, y cinta de handles */
+(() => {
+  const all = [RAMMA, ...CREW, ...INDIES].map(o => o.f);
+  const reel = document.getElementById("reel");
+  for (let c = 0; c < 4; c++) {
+    const col = el("div", "col");
+    const pick = all.filter((_, i) => i % 4 === c).concat(all.filter((_, i) => i % 4 !== c).slice(c, c + 2));
+    [...pick, ...pick].forEach(f => { const im = el("img"); im.src = M + f + ".jpg"; im.alt = ""; im.loading = "lazy"; col.append(im); });
+    reel.append(col);
+  }
+  const words = ["TA TE TI", "129.928 vistas", ...CREW.map(o => "@" + o.h), "Ramma", "Trendwaves"];
+  const t = document.getElementById("ticker");
+  const html = words.map((w, i) => `<span class="${i % 4 === 0 ? "g" : ""}">${w}</span>`).join("");
+  t.innerHTML = html + html;
+})();
+
+/* ranking */
+(() => {
+  const ol = document.getElementById("rank");
+  const max = CREW[0].v;
+  CREW.forEach((o, i) => {
+    const li = el("li", i < 3 ? "top3" : "");
+    li.style.setProperty("--d", i);
+    li.innerHTML = `<a href="${url(o)}" target="_blank" rel="noopener">
+      <span class="p">${String(i + 1).padStart(2, "0")}</span>
+      <img src="${M + o.f}.jpg" alt="" loading="lazy">
+      <span class="who"><span class="nm">${o.n}</span><span class="hd">@${o.h} · ${o.d}${o.x ? " · " + o.x : ""}</span></span>
+      <span class="b" style="--w:${(o.v / max).toFixed(4)}"><i></i></span>
+      <span class="v" data-count="${o.v}">${fmt(o.v)}</span></a>`;
+    ol.append(li);
+  });
+})();
+
+/* teléfonos con video */
+function phone(o, cap, rank) {
+  const p = el("figure", "phone");
+  p.style.margin = "0";
+  p.innerHTML = `<div class="scr" role="button" tabindex="0" aria-label="Activar o silenciar el sonido del video de ${o.n}">
+      <img src="${M + o.f}.jpg" alt="Portada del video de ${o.n}">
+      <video data-src="${M + o.f}.mp4" poster="${M + o.f}.jpg" muted loop playsinline preload="none"></video>
+      ${rank ? `<span class="rk">${rank}</span>` : ""}
+      <span class="snd">Tocar para escuchar</span></div>
+    <figcaption class="cap">${cap}</figcaption>`;
+  return p;
+}
+(() => {
+  const pod = document.getElementById("podium");
+  CREW.slice(0, 3).forEach((o, i) => pod.append(phone(o,
+    `<span class="nm">${o.n}</span><b><span data-count="${o.v}">${fmt(o.v)}</span> vistas</b><span class="lbl">${fmt(o.l)} me gusta · ${o.s} compartidos${o.x ? " · " + o.x : ""}</span>`, i + 1)));
+  const ind = document.getElementById("indies");
+  INDIES.forEach(o => ind.append(phone(o,
+    `<span class="nm">@${o.h}</span><b><span data-count="${o.v}">${fmt(o.v)}</span> vistas</b><span class="lbl">${o.c} · ${o.d}</span>`)));
+})();
+
+/* por encima de su mediana */
+(() => {
+  const box = document.getElementById("mult");
+  CREW.filter(o => o.m && o.v > o.m).sort((a, b) => b.v / b.m - a.v / a.m).forEach((o, i) => {
+    const k = o.v / o.m, top = Math.max(o.v, o.m);
+    const d = el("div");
+    d.style.setProperty("--d", i);
+    d.innerHTML = `<div class="who"><img src="${M + o.f}.jpg" alt=""><div><b>${o.n}</b><span class="lbl">@${o.h}</span></div></div>
+      <div class="x">×<span data-count="${k.toFixed(1)}" data-dec="1">${fmt(k, 1)}</span></div>
+      <div class="pair">
+        <div class="r"><span class="lbl">Habitual</span><span class="t" style="--w:${(o.m / top).toFixed(3)}"><i></i></span><span>${fmt(o.m)}</span></div>
+        <div class="r n"><span class="lbl">Ta Te Ti</span><span class="t" style="--w:${(o.v / top).toFixed(3)}"><i></i></span><span>${fmt(o.v)}</span></div>
+      </div>`;
+    box.append(d);
+  });
+  const note = el("div");
+  note.innerHTML = `<span class="tag">El caso viuxyta.</span><p class="copy">Con dos videos, multiplicó por casi ocho lo que suele ver su audiencia. Fue la creadora con mejor retorno de toda la campaña.</p>`;
+  box.append(note);
+})();
+
+/* muro de videos */
+(() => {
+  const w = document.getElementById("wall");
+  [RAMMA, ...CREW].forEach((o, i) => {
+    const t = el("div", "tile" + (o === RAMMA ? " art" : ""));
+    t.style.setProperty("--d", i);
+    t.setAttribute("role", "button"); t.tabIndex = 0;
+    t.setAttribute("aria-label", `Video de ${o.n}, ${fmt(o.v)} vistas. Activar o silenciar el sonido`);
+    t.innerHTML = `<img src="${M + o.f}.jpg" alt="" loading="lazy"><video data-src="${M + o.f}.mp4" poster="${M + o.f}.jpg" muted loop playsinline preload="none"></video>
+      <div class="ov"><b>${fmt(o.v)}</b><span>@${o.h}</span></div>`;
+    w.append(t);
+  });
+})();
+
+/* línea de tiempo */
+(() => {
+  const box = document.getElementById("chart");
+  const W = 1000, H = 400, x0 = 64, x1 = 980, y0 = 26, y1 = 360;
+  const day = d => { const [dd, mm] = d.split("/").map(Number); return mm === 10 ? dd - 22 : dd + 9; };
+  const X = d => x0 + day(d) / 31 * (x1 - x0);
+  const Y = v => y1 - (Math.log10(v) - 2) / 3 * (y1 - y0);
+  const R = v => 5 + 36 * Math.sqrt(v / 78600);
+  let s = `<svg viewBox="0 0 ${W} ${H + 30}" role="img" aria-label="Videos del trend por fecha de publicación y vistas">`;
+  [100, 1000, 10000, 100000].forEach(v => {
+    s += `<line class="ax" x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${x0 - 10}" y="${Y(v) + 4}" text-anchor="end">${v >= 1000 ? v / 1000 + "k" : v}</text>`;
+  });
+  [["22/10", "22 OCT · SALE"], ["1/11", "1 NOV"], ["8/11", "8 NOV"], ["15/11", "15 NOV"], ["22/11", "22 NOV · CIERRE"]].forEach(([d, t], i) => {
+    s += `<line class="ax" x1="${X(d)}" x2="${X(d)}" y1="${y0}" y2="${y1}" stroke-dasharray="2 5"/><text x="${X(d)}" y="${H + 16}" text-anchor="${i === 0 ? "start" : i === 4 ? "end" : "middle"}">${t}</text>`;
+  });
+  s += `<line class="sweep" x1="${x0}" x2="${x0}" y1="${y0}" y2="${y1}" style="--sx:${x1 - x0}px"/>`;
+  const pts = [
+    ...CREW.map(o => ({...o, k: "camp"})),
+    {...RAMMA, k: "art"},
+    ...INDIES.map(o => ({...o, k: "ind"})),
+    {...AGOS_AMIGA, k: "ind"}
+  ].sort((a, b) => day(a.d) - day(b.d) || b.v - a.v);
+  pts.forEach((o, i) => {
+    const cx = X(o.d) + (o.k === "ind" ? 8 : 0), cy = Y(o.v), r = R(o.v);
+    const sub = o.k === "camp" ? "Campaña" : o.k === "art" ? "Video de Ramma" : "Independiente · " + o.c;
+    s += `<g class="bub" style="--d:${i}" data-t="${o.n}|${fmt(o.v)} vistas|${o.d} · ${sub}"><circle class="${o.k}" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r.toFixed(1)}"/></g>`;
+    if (["Ramma", "Joaco Neco", "viuxyta", "Melina Gonzalez", "Taffita"].includes(o.n))
+      s += `<text class="lab" x="${(cx + r + 6).toFixed(1)}" y="${(cy + 4).toFixed(1)}">${o.n === "Melina Gonzalez" ? "Melina" : o.n}</text>`;
+  });
+  s += `</svg>`;
+  box.insertAdjacentHTML("afterbegin", s);
+  const tip = document.getElementById("tip");
+  const show = g => {
+    const [a, b, c] = g.dataset.t.split("|");
+    tip.innerHTML = `<b>${a}</b>${b}<br><span class="lbl">${c}</span>`;
+    const r = g.getBoundingClientRect(), br = box.getBoundingClientRect();
+    tip.style.left = Math.min(Math.max(r.left - br.left + r.width / 2, 90), br.width - 90) + "px";
+    tip.style.top = (r.top - br.top) + "px";
+    tip.classList.add("show");
+    box.querySelectorAll(".bub.hl").forEach(x => x.classList.remove("hl"));
+    g.classList.add("hl");
+  };
+  box.querySelectorAll(".bub").forEach(g => {
+    g.addEventListener("pointerenter", () => show(g));
+    g.addEventListener("click", e => { e.stopPropagation(); show(g); });
+  });
+  box.addEventListener("pointerleave", () => { tip.classList.remove("show"); box.querySelectorAll(".bub.hl").forEach(x => x.classList.remove("hl")); });
+})();
+
+/* mosaico del cierre */
+(() => {
+  const m = document.getElementById("mosaic");
+  [...CREW, RAMMA, ...INDIES].forEach((o, i) => { const im = el("img"); im.src = M + o.f + ".jpg"; im.alt = ""; im.loading = "lazy"; im.style.setProperty("--d", (i * 0.53) % 9); m.append(im); });
+})();
+
+/* sonido: un solo video con sonido a la vez */
+function setLoud(scr) {
+  const v = scr.querySelector("video");
+  const turnOn = v.muted;
+  document.querySelectorAll("video").forEach(x => { x.muted = true; });
+  document.querySelectorAll(".loud").forEach(x => { x.classList.remove("loud"); const s = x.querySelector(".snd"); if (s) s.textContent = "Tocar para escuchar"; });
+  if (turnOn) {
+    v.muted = false; v.currentTime = 0; v.play().catch(() => {});
+    scr.classList.add("loud");
+    const s = scr.querySelector(".snd"); if (s) s.textContent = "Con sonido";
+  }
+}
+document.querySelectorAll(".phone .scr, .tile").forEach(s => {
+  s.addEventListener("click", () => setLoud(s));
+  s.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); setLoud(s); } });
+});
+
+/* contadores */
+function countUp(root) {
+  root.querySelectorAll("[data-count]").forEach(n => {
+    const to = parseFloat(n.dataset.count), dec = +(n.dataset.dec || 0), suf = n.dataset.suf || "";
+    const done = () => { n.textContent = fmt(to, dec) + suf; };
+    if (reduce) return done();
+    const dur = 1700, delay = 250 + (parseFloat(getComputedStyle(n.closest("[style*='--d']") || n).getPropertyValue("--d")) || 0) * 90;
+    n.textContent = fmt(0, dec) + suf;
+    const t0 = performance.now() + delay;
+    const step = now => {
+      const p = Math.min(Math.max((now - t0) / dur, 0), 1);
+      const e = 1 - Math.pow(1 - p, 4);
+      n.textContent = fmt(to * e, dec) + suf;
+      if (p < 1 && n.closest(".slide").classList.contains("on")) requestAnimationFrame(step); else done();
+    };
+    requestAnimationFrame(step);
+  });
+}
+
+/* navegación */
+const slides = [...document.querySelectorAll(".slide")];
+const dots = document.getElementById("dots");
+slides.forEach((s, i) => {
+  const b = el("button"); b.setAttribute("aria-label", `Ir a ${s.dataset.name}`); b.addEventListener("click", () => go(i)); dots.append(b);
+});
+let cur = -1, lock = 0;
+function go(i) {
+  i = Math.max(0, Math.min(slides.length - 1, i));
+  if (i === cur) return;
+  cur = i;
+  slides.forEach((s, k) => {
+    s.classList.toggle("on", k === i);
+    s.classList.toggle("past", k < i);
+    s.setAttribute("aria-hidden", k === i ? "false" : "true");
+    s.inert = k !== i;
+    s.querySelectorAll("video").forEach(v => {
+      if (k === i) {
+        if (!v.src) v.src = v.dataset.src;
+        v.play().catch(() => {});
+      } else { v.pause(); v.muted = true; }
+    });
+    if (k !== i) s.querySelectorAll(".loud").forEach(x => { x.classList.remove("loud"); const t = x.querySelector(".snd"); if (t) t.textContent = "Tocar para escuchar"; });
+  });
+  slides[i].querySelector(".in").scrollTop = 0;
+  countUp(slides[i]);
+  [...dots.children].forEach((d, k) => d.setAttribute("aria-current", k === i ? "true" : "false"));
+  document.getElementById("count").textContent = `${String(i + 1).padStart(2, "0")} / ${slides.length}`;
+  document.getElementById("name").textContent = slides[i].dataset.name;
+  document.getElementById("prog").style.setProperty("--p", (i + 1) / slides.length);
+  document.getElementById("prev").disabled = i === 0;
+  const nx = document.getElementById("next");
+  nx.disabled = i === slides.length - 1;
+  nx.textContent = i === slides.length - 1 ? "Fin" : "Siguiente →";
+  history.replaceState(null, "", "#" + (i + 1));
+}
+document.getElementById("prev").addEventListener("click", () => go(cur - 1));
+document.getElementById("next").addEventListener("click", () => go(cur + 1));
+addEventListener("keydown", e => {
+  if (e.target.closest("input,textarea")) return;
+  if (["ArrowRight", "PageDown"].includes(e.key) || (e.key === " " && !e.target.closest("[role=button],button,a"))) { e.preventDefault(); go(cur + 1); }
+  else if (["ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); go(cur - 1); }
+  else if (e.key === "Home") go(0);
+  else if (e.key === "End") go(slides.length - 1);
+});
+/* rueda: solo cambia de diapositiva cuando la actual no tiene más para desplazar */
+addEventListener("wheel", e => {
+  if (Math.abs(e.deltaY) < 30 || Date.now() < lock) return;
+  const sc = slides[cur].querySelector(".in");
+  const atEnd = sc.scrollTop + sc.clientHeight >= sc.scrollHeight - 2, atTop = sc.scrollTop <= 0;
+  if (e.deltaY > 0 && atEnd) { lock = Date.now() + 900; go(cur + 1); }
+  else if (e.deltaY < 0 && atTop) { lock = Date.now() + 900; go(cur - 1); }
+}, {passive: true});
+/* deslizar en celular */
+let sx = 0, sy = 0, st = 0;
+addEventListener("touchstart", e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now(); }, {passive: true});
+addEventListener("touchend", e => {
+  const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+  if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.4 && Date.now() - st < 700) go(cur + (dx < 0 ? 1 : -1));
+}, {passive: true});
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) document.querySelectorAll("video").forEach(v => v.pause());
+  else slides[cur].querySelectorAll("video").forEach(v => v.play().catch(() => {}));
+});
+const start = parseInt(location.hash.slice(1), 10);
+go(Number.isFinite(start) ? start - 1 : 0);
+</script>
+</body>
+</html>

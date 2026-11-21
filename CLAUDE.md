@@ -7,6 +7,7 @@ Sitio estático de Trendwaves (trendwaves.net, deploy en Vercel desde `main`). S
 - `/` → `index.html` (main del sitio).
 - `/ramma/accion` → `ramma/accion/index.html`: página principal de la campaña de Ta Te Ti (Ramma). Los alias `/ramma-accion-single` y `/ramma-campaña` redirigen acá (`vercel.json`).
 - `/ramma-accion-reglas` → `ramma-accion-reglas/index.html`: reglas de contenido para creadores de la misma campaña. Es independiente de `/ramma/accion` (no la modifica).
+- `/ramma/resumen` → `ramma/resumen/index.html`: deck interactivo de cierre de la campaña Ta Te Ti, 11 diapositivas con números animados, ranking, podio con video, gráfico del trend, creadores independientes e inversión. Datos al 21/11/2026 en el array `CREW` del JS. Clips comprimidos de 12 s y portadas en `media/ramma/resumen/`. Se navega con flechas, rueda, swipe y el `#número` de la URL.
 - Media de la campaña en `media/ramma/`. Las páginas usan rutas absolutas (`/media/...`) para que funcionen con o sin barra final.
 
 ## Trabajo compartido entre agentes — SIEMPRE sincronizar con GitHub
